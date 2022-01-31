@@ -31,7 +31,7 @@ DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
 WHITENOISE_AUTOREFRESH = True
 
-ALLOWED_HOSTS = ['s1kebeatstore.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['s1kebeatstore.herokuapp.com']
 
 
 # Application definition
