@@ -29,8 +29,6 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-ycc29q^vguhtsp
 #DEBUG = False
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-WHITENOISE_AUTOREFRESH = True
-
 ALLOWED_HOSTS = ['s1kebeatstore.herokuapp.com']
 
 
