@@ -1,0 +1,178 @@
+/* poppins-200 - latin */
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 200;
+    src: url("../fonts/poppins-v15-latin-200.c110c6ae0631.eot"); /* IE9 Compat Modes */
+    src: local(''),
+         url("../fonts/poppins-v15-latin-200.c110c6ae0631.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+         url("../fonts/poppins-v15-latin-200.55c2cae4b028.woff2") format('woff2'), /* Super Modern Browsers */
+         url("../fonts/poppins-v15-latin-200.95f4da7738a4.woff") format('woff'), /* Modern Browsers */
+         url("../fonts/poppins-v15-latin-200.ccdf2cc11a9f.ttf") format('truetype'), /* Safari, Android, iOS */
+         url("../fonts/poppins-v15-latin-200.32a79f56523f.svg#Poppins") format('svg'); /* Legacy iOS */
+  }
+  /* poppins-300 - latin */
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/poppins-v15-latin-300.d366b6204fa8.eot"); /* IE9 Compat Modes */
+    src: local(''),
+         url("../fonts/poppins-v15-latin-300.d366b6204fa8.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+         url("../fonts/poppins-v15-latin-300.9ddc04912d6e.woff2") format('woff2'), /* Super Modern Browsers */
+         url("../fonts/poppins-v15-latin-300.081c758544b2.woff") format('woff'), /* Modern Browsers */
+         url("../fonts/poppins-v15-latin-300.235b530c69ae.ttf") format('truetype'), /* Safari, Android, iOS */
+         url("../fonts/poppins-v15-latin-300.86468b610bc7.svg#Poppins") format('svg'); /* Legacy iOS */
+}
+  /* poppins-regular - latin */
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/poppins-v15-latin-regular.78430a281058.eot"); /* IE9 Compat Modes */
+    src: local(''),
+         url("../fonts/poppins-v15-latin-regular.78430a281058.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+         url("../fonts/poppins-v15-latin-regular.9ed361bba848.woff2") format('woff2'), /* Super Modern Browsers */
+         url("../fonts/poppins-v15-latin-regular.4fc29212bd42.woff") format('woff'), /* Modern Browsers */
+         url("../fonts/poppins-v15-latin-regular.342c989fe844.ttf") format('truetype'), /* Safari, Android, iOS */
+         url("../fonts/poppins-v15-latin-regular.c26cc61af85a.svg#Poppins") format('svg'); /* Legacy iOS */
+}
+  /* poppins-500 - latin */
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    src: url("../fonts/poppins-v15-latin-500.24ebb2ab0ccb.eot"); /* IE9 Compat Modes */
+    src: local(''),
+         url("../fonts/poppins-v15-latin-500.24ebb2ab0ccb.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+         url("../fonts/poppins-v15-latin-500.84780596e268.woff2") format('woff2'), /* Super Modern Browsers */
+         url("../fonts/poppins-v15-latin-500.cb0ab582f002.woff") format('woff'), /* Modern Browsers */
+         url("../fonts/poppins-v15-latin-500.0fef99131e91.ttf") format('truetype'), /* Safari, Android, iOS */
+         url("../fonts/poppins-v15-latin-500.acb3d87c4057.svg#Poppins") format('svg'); /* Legacy iOS */
+  }
+  /* poppins-600 - latin */
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    src: url("../fonts/poppins-v15-latin-600.49ff83e83f67.eot"); /* IE9 Compat Modes */
+    src: local(''),
+         url("../fonts/poppins-v15-latin-600.49ff83e83f67.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+         url("../fonts/poppins-v15-latin-600.087457026965.woff2") format('woff2'), /* Super Modern Browsers */
+         url("../fonts/poppins-v15-latin-600.759f137c9b8c.woff") format('woff'), /* Modern Browsers */
+         url("../fonts/poppins-v15-latin-600.5cf8dfe85469.ttf") format('truetype'), /* Safari, Android, iOS */
+         url("../fonts/poppins-v15-latin-600.4b6d70263966.svg#Poppins") format('svg'); /* Legacy iOS */
+}
+
+html {
+    font-size: 11px;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+body {
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+main {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    min-height: 83.7vh;
+
+}
+header, .title, .search-beats, .promo {
+    width: 100%;
+}
+
+
+p {
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: black;
+    -webkit-transition: color .3s;
+    transition: color .3s;
+}
+button {
+    cursor: pointer;
+}
+iframe {
+    height: 30vh;
+    width: 80%;
+    max-width: 600px;
+    border: 1px solid #fdfffc;
+    border-radius: 5px;
+}
+input {
+    width: 100%;
+    height: 35px;
+    padding: 1rem;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    background: white;
+    border: 1px solid #e5e8eb;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    -webkit-transition: background .3s;
+    transition: background .3s;
+}
+input:focus {
+    outline: none;
+    border-color: #7945fc;
+}
+input::-webkit-input-placeholder {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #04111dbf;
+}
+
+
+.title {
+    margin-block: 2%;
+    font-size: 3rem;
+    text-align: center;
+}
+.vk {
+    background-repeat: no-repeat;
+    background-size: 2.5rem 2.5rem;
+    background-position: .15em .25em;
+    padding-left: 2.5rem;
+    -webkit-transition: background-image .5s;
+    transition: background-image .5s;
+    background-image: url("../images/vk.c5b1a7418d2d.png");
+}
+.youtube {
+    background-repeat: no-repeat;
+    background-size: 2.5rem 2.5rem;
+    background-position: .15em .25em;
+    padding-left: 2.5rem;
+    -webkit-transition: background-image .5s;
+    transition: background-image .5s;
+    background-image: url("../images/youtube.fcbe1f73d8a3.png");
+}  
+
+
+.search-beats {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 5%;
+}
+@media screen and (max-width: 830px) {
+    html {
+        font-size: 10px;
+    }
+    iframe {
+        height: 20vh;
+    }
+} 
