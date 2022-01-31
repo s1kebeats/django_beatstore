@@ -22,10 +22,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ycc29q^vguhtsp$zu(t^s!5k9u8n^wyia$%9rlg^_7u3awh(ii'
+#SECRET_KEY = 'django-insecure-ycc29q^vguhtsp$zu(t^s!5k9u8n^wyia$%9rlg^_7u3awh(ii'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-ycc29q^vguhtsp$zu(t^s!5k9u8n^wyia$%9rlg^_7u3awh(ii')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+#DEBUG = False
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
+
+WHITENOISE_AUTOREFRESH = True
 
 ALLOWED_HOSTS = ['s1kebeatstore.herokuapp.com', 'localhost', '127.0.0.1']
 
@@ -44,6 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -130,6 +135,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Activate Django-Heroku.
 django_on_heroku.settings(locals())
