@@ -107,8 +107,37 @@ body {
 .viewallbeats a:hover {
     color: #04111dbf;
 }
+@media screen and (max-width: 339px) {
+    .wrap {
+        width: 110px;
+        height: 110px;
+    }
+    .beats-wrapper {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+    }
+    .beat-wrapper {
+        width: 90%;
+        height: 110px;
+        margin-left: 0;
+        margin-top: 2.5%;
+    }
+    .beat-right {
+        padding-inline: 1%;
+        padding-block: 1%;
+        width: calc(100% - 110px);
+    }
+    .beat-char {
+        height: 20px;
+        font-size: 1.5rem;
+    }
+    .beats {
+        border-top: none;
+    }
+}
 
-@media screen and (max-width: 524px) {
+@media screen and (min-width: 340px) and (max-width: 524px) {
     .beats-wrapper {
         flex-wrap: nowrap;
         flex-direction: column;
