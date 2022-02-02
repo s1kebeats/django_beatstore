@@ -120,15 +120,15 @@ only screen and (min-device-pixel-ratio: 2) {}
 
 
 @media screen and (max-width: 339px) {
-    .audiojs {
-        max-width: 240px;
-    }
     .audiojs .scrubber {
-        width: 105px;
+        width: 95px;
         margin-left: 0;
     }
+    .audiojs .time {
+        width: 0;
+    }   
 }
-@media screen and (max-width: 550px) {
+@media screen and (min-width: 340px) and (max-width: 550px) {
     .player {
         height: 43px;
     }
