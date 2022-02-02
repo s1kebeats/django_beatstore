@@ -118,6 +118,16 @@ only screen and (min-device-pixel-ratio: 2) {}
 .error .error { display: block; }         .error .play-pause p { cursor: auto; }         
 .error .error-message { display: block; }
 
+
+@media screen and (max-width: 339px) {
+    .audiojs {
+        max-width: 240px;
+    }
+    .audiojs .scrubber {
+        width: 105px;
+        margin-left: 0;
+    }
+}
 @media screen and (max-width: 550px) {
     .player {
         height: 43px;
