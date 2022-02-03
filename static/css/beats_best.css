@@ -30,10 +30,12 @@ body {
     margin-block: 1%;
     background: white;
     text-align: center;
-    border: 1px solid #e5e8eb;
     border-radius: 10px;
 }
 .beat-right {
+    border: 1px solid #e5e8eb;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
     width: calc(100% - 160px);
     padding-inline: 5%;
     padding-block: 2%;
@@ -109,8 +111,8 @@ body {
 }
 @media screen and (max-width: 339px) {
     .wrap {
-        width: 108px;
-        height: 108px;
+        width: 110px;
+        height: 110px;
     }
     .beats-wrapper {
         flex-wrap: nowrap;
@@ -118,6 +120,7 @@ body {
         align-items: center;
     }
     .beat-wrapper {
+        box-sizing: content-box;
         width: 90%;
         height: 110px;
         margin-left: 0;
@@ -162,8 +165,8 @@ body {
         border-top: none;
     }
     .wrap {
-        width: 118px;
-        height: 118px;
+        width: 120px;
+        height: 120px;
     }
 }
 @media screen and (min-width: 525px) {
