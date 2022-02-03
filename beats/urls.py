@@ -10,4 +10,4 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('beats/', views.BeatsListView.as_view(), name='beats'),
     path('termsofuse/', views.terms, name='terms'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
