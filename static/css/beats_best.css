@@ -109,8 +109,8 @@ body {
 }
 @media screen and (max-width: 339px) {
     .wrap {
-        width: 110px;
-        height: 110px;
+        width: 108px;
+        height: 108px;
     }
     .beats-wrapper {
         flex-wrap: nowrap;
