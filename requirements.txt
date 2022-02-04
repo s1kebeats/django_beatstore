@@ -10,9 +10,9 @@ jmespath==0.10.0
 Pillow==9.0.0
 psycopg2-binary==2.9.3
 python-dateutil==2.8.2
+python-gettext==4.0
 s3transfer==0.5.1
 six==1.16.0
 sqlparse==0.4.2
 urllib3==1.26.8
 whitenoise==5.3.0
-

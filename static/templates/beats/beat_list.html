@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static i18n %}
 
 {% block css%}    
 <link rel="stylesheet" href="{% static 'css/pagination.css' %}">
@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
-<p class="title">Search</p>
+<p class="title">{% trans "Search" %}</p>
 <section class="search-beats">
     <!-- Search -->
     <div class="search-wrapper">
@@ -22,13 +22,13 @@
                 </div>
                 <!-- Name -->
                 <div class="form-section">
-                    <p>Name</p>
+                    <p>{% trans "Name" %}</p>
                     <input class="form-field field-name" type="text" placeholder="beats" name="nm">
                 </div>
             </div>
             <div class="form-bottom">
                 <div class="form-section">
-                    <p>Artist</p>
+                    <p>{% trans "Artist" %}</p>
                         <!-- Artist -->
                         <ul>
                             {% for artist in view.get_artists%}
@@ -40,7 +40,7 @@
                         </ul>
                 </div>
             </div>
-            <div class="search-button"><button type="submit">Search</button></div>
+            <div class="search-button"><button type="submit">{% trans "Search" %}</button></div>
         </form>
     </div>
     </div>
@@ -56,11 +56,11 @@
                     </div>
                     <div class="beat-right">
                         <div class="beat-char">
-                            <div class="char-title">Name</div>
+                            <div class="char-title">{% trans "Name" %}</div>
                             <div class="char-value"><div>{{beat.name}}</div></div>
                         </div>
                         <div class="beat-char">
-                            <div class="char-title">Artist</div>
+                            <div class="char-title">{% trans "Artist" %}</div>
                             <div class="char-value"><div>{{beat.display_artist}}</div></div>
                         </div>
                         <div class="beat-char">
@@ -70,14 +70,14 @@
                         <div class="player">
                             <div class="player-wrapper">
                                 <audio src="{{ beat.mp3.url }}" preload="auto"></audio>
-                                <a href="{{ beat.wave.url }}" class="download"  download="" title="download .wave">&nbsp</a>
+                                <a href="{{ beat.wave.url }}" class="download"  download="" title="{% trans "download .wave" %}">&nbsp</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 {% endfor %}
                 {% else %}
-                <p style="font-size: 2rem; margin: 1%">No mathes found.</p>
+                <p style="font-size: 2rem; margin: 1%">{% trans "No mathes found." %}</p>
                 {% endif %} 
             </div>
         </div>
@@ -89,7 +89,7 @@
                         </div>
                         {% endif %}
                         <div class="current">
-                            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                            {% trans "Page" %} {{ page_obj.number }} {% trans "of" %} {{ page_obj.paginator.num_pages }}
                         </div>
                         {% if page_obj.has_next %}
                         <div class="page-styled">

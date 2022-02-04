@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static i18n %}
 
 {% block css%}    
 <link rel="stylesheet" href="{% static 'css/beats_best.css' %}">
@@ -8,13 +8,13 @@
 
 {% block content %}
 <section class="promo">
-    <p class="title">Latest on YouTube</p>
+    <p class="title">{% trans "Latest on YouTube" %}</p>
     <iframe src="https://www.youtube.com/embed/V2OjQ2gHK6E" alt="youtube player"title="YouTube video player"
         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
     </iframe>
 </section>
-<p class="title">Most popular</p>
+<p class="title">{% trans "Most popular" %}</p>
 <div class="beats">
     <div class="beats-wrapper">
     {% if beat_list %}
@@ -25,11 +25,11 @@
                 </div>
                 <div class="beat-right">
                     <div class="beat-char">
-                        <div class="char-title">Name</div>
+                        <div class="char-title">{% trans "Name" %}</div>
                         <div class="char-value"><div>{{beat.name}}</div></div>
                     </div>
                     <div class="beat-char">
-                        <div class="char-title">Artist</div>
+                        <div class="char-title">{% trans "Artist" %}</div>
                         <div class="char-value"><div>{{beat.display_artist}}</div></div>
                     </div>
                     <div class="beat-char">
@@ -39,18 +39,18 @@
                     <div class="player">
                         <div class="player-wrapper">
                             <audio src="{{ beat.mp3.url }}" preload="auto"></audio>
-                            <a href="{{ beat.wave.url }}" class="download"  download="" title="download .wave">&nbsp</a>
+                            <a href="{{ beat.wave.url }}" class="download"  download="" title="{% trans "download .wave" %}">&nbsp</a>
                         </div>
                     </div>
                 </div>
             </div>
             {% endfor %}
             {% else %}
-            <p>There is no beats.</p>
+            <p>{% trans "There is no beats." %}</p>
             {% endif %} 
         </div>
     <div class="viewallbeats">
-        <a href="{% url 'beats' %}">View all beats </a>
+        <a href="{% url 'beats' %}">{% trans "View all beats" %}</a>
     </div>
 {% endblock %}
 {% block lang %}{% url 'index' %}{% endblock %}

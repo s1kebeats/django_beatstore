@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static i18n %}
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'css/terms.css' %}">   
@@ -7,17 +7,17 @@
 {% endblock %}
 
 
-{% block title %}<title>Terms of use</title>{% endblock %}
+{% block title %}<title>{% trans "Terms of use" %}</title>{% endblock %}
 
 {% block content %}
 <p class="title">Terms of use</p>
 <section class="terms">
     <p>
-        All beats are free to use, but you must write me into the name of your song:
+        {% trans "All beats are free to use, but you must write me into the name of your song:" %}
     </p>
     <img alt="use 'prod. by s1kebeats' in the name of your song" src="{% static 'images/credit.png' %}">
 </section>
-<p class="title">Most popular</p>
+<p class="title">{% trans "Most popular" %}</p>
 <div class="beats">
     <div class="beats-wrapper">
     {% if beat_list %}
@@ -28,11 +28,11 @@
                 </div>
                 <div class="beat-right">
                     <div class="beat-char">
-                        <div class="char-title">Name</div>
+                        <div class="char-title">{% trans "Name" %}</div>
                         <div class="char-value"><div>{{beat.name}}</div></div>
                     </div>
                     <div class="beat-char">
-                        <div class="char-title">Artist</div>
+                        <div class="char-title">{% trans "Artist" %}</div>
                         <div class="char-value"><div>{{beat.display_artist}}</div></div>
                     </div>
                     <div class="beat-char">
@@ -42,17 +42,17 @@
                     <div class="player">
                         <div class="player-wrapper">
                             <audio src="{{ beat.mp3.url }}" preload="auto"></audio>
-                            <a href="{{ beat.wave.url }}" class="download"  download="" title="download .wave">&nbsp</a>
+                            <a href="{{ beat.wave.url }}" class="download"  download="" title="{% trans "download .wave" %}">&nbsp</a>
                         </div>
                     </div>
                 </div>
             </div>
             {% endfor %}
             {% else %}
-            <p>There is no beats.</p>
+            <p>{% trans "There is no beats." %}</p>
             {% endif %} 
         </div>
     <div class="viewallbeats">
-        <a href="{% url 'beats' %}">View all beats </a>
+        <a href="{% url 'beats' %}">{% trans "View all beats" %}</a>
     </div>
 {% endblock %}

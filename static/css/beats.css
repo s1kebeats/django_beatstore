@@ -41,8 +41,8 @@
     width: calc(100% - 160px);
     padding-inline: 5%;
     padding-block: 2%;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
     border: 1px solid #e5e8eb;
 }
 .beat-char {

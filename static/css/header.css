@@ -39,6 +39,7 @@ header {
     height: 100%;
     display: flex;
     align-items: center;
+    font-family: 'Poppins', sans-serif;
 }
 .title-wrapper p {
     line-height: 3rem;
@@ -58,27 +59,24 @@ header nav {
         justify-content: flex-end;
 }
 header nav a {
-    width: 75px;
+    max-width: 140px;
     text-align: center;
     color: #04111dbf;
+    padding-left: 1.5em;
 }  
 header nav a:hover {
     color: black;
 }
-@media screen and (max-width: 830px) {
-    header {
-        flex-direction: column;
-        padding: 0;
-        margin-bottom: 5%;
-    }
+@media screen and (max-width: 649px) {
     header nav {
         display: none;
     }
-    .title-wrapper {
-        width: 100%;
+    header {
+        padding: 0;
     }
-    .title-wrapper a {
-        width: 100%;
-        justify-content: center;
+}
+@media screen and (max-width: 830px) {
+    header {
+        margin-bottom: 5%;
     }
 } 
