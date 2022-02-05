@@ -5,7 +5,6 @@
     width: 100%;
     border-block: 1px solid #e5e8eb;
     background: white;
-
 }
 .pagination-downer {
     height: calc(100% - 3rem);
@@ -21,6 +20,7 @@
         flex-wrap: wrap;
 }
 .wrap {
+    object-fit: cover;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }

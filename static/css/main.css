@@ -69,9 +69,12 @@ html {
     overflow-x: hidden;
 }
 body {
+    height: 100%;
     background-size: cover;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 main {
     display: flex;
@@ -82,10 +85,9 @@ main {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    min-height: 85.1vh;
-
+    flex: 1 1 auto;
 }
-header, .title, .search-beats, .promo {
+header, .title, .search-beats, .promo, footer {
     width: 100%;
 }
 

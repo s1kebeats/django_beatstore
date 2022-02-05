@@ -38,7 +38,7 @@
                     </div>
                     <div class="player">
                         <div class="player-wrapper">
-                            <audio src="{{ beat.mp3.url }}" preload="auto"></audio>
+                            <audio src="{{ beat.mp3.url }}" preload="metadata"></audio>
                             <a href="{{ beat.wave.url }}" class="download"  download="" title="{% trans "download .wave" %}">&nbsp</a>
                         </div>
                     </div>
@@ -52,6 +52,7 @@
     <div class="viewallbeats">
         <a href="{% url 'beats' %}">{% trans "View all beats" %}</a>
     </div>
+</div>
 {% endblock %}
 {% block lang %}{% url 'index' %}{% endblock %}
 {% block js %}{% endblock %}

@@ -17,6 +17,7 @@ body {
     justify-content: center;
 }
 .wrap {
+    object-fit: cover;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
