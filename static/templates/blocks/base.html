@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="author" content="Arthur Dacenko-Boos">
+    <meta name="description" content="S1ke Beats official website. You can download, listen and see all my music here." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block title %}<title>S1ke Beatstore</title>{% endblock %}
+    {% load static i18n %}
+    <link href="{% static 'images/S_backed.svg' %}" rel="shortcut icon" type="image/png">
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/language_switcher.css' %}">
+    <link rel="stylesheet" href="{% static 'css/beats.css' %}">
+    <link rel="stylesheet" href="{% static 'css/player.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+    <link rel="preload" as="script" href="{% static 'js/player.js' %}">
+    <link rel="preload" as="image" href="{% static 'images/play.svg' %}">
+    <link rel="preload" as="image" href="{% static 'images/pause.svg' %}">
+    <script src="{% static 'js/player.js' %}"></script>
+    <script>
+        audiojs.events.ready(function() {
+          var as = audiojs.createAll();
+        });
+    </script>
+    {% block css %}{% endblock %}
+</head>
+<body>
+    <main>
+        <header>
+            <div class="logo">
+                <a href="{% url 'index' %}" class="logo__link">
+                    <img class="logo__icon" src="{% static 'images/S.svg' %}">
+                    <span class="logo__text">s1kebeats</span>
+                </a>
+            </div>
+            <nav class="navigation navigation_header">
+                <a href="{% url 'index' %}" class="navigation_header__link">{% trans "Home" %}</a>
+                <a href="{% url 'beats' %}" class="navigation_header__link">{% trans "Beats" %}</a>
+                <a href="{% url 'terms' %}" class="navigation_header__link">{% trans "Usage" %}</a>
+            </nav>
+            <form class="language-form" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                {% get_current_language as current %}
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                <div class="language-form__buttons">
+                    {% for language in languages %}
+                    {% if current == language.code %}
+                    <button disabled type="submit" value="{{ language.code }}" class="language-form__button language-form__button_current" name="language">{{ language.code }}</button>
+                    {% else %}
+                    <button type="submit" value="{{ language.code }}" class="language-form__button" name="language">{{ language.code }}</button>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </form>
+        </header>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <div class="footer__row footer__row_top">
+            <div class="footer__col footer__col_left">
+                <nav class="navigation navigation_footer">
+                    <a href="{% url 'index' %}" class="navigation_footer__link">{% trans "Home" %}</a>
+                    <a href="{% url 'beats' %}" class="navigation_footer__link">{% trans "Beats" %}</a>
+                    <a href="{% url 'terms' %}" class="navigation_footer__link">{% trans "Usage" %}</a>
+                </nav>
+            </div>
+            <div class="footer__col footer__col_right">
+                <ul class="socials">
+                    <li class="socials__item">
+                        <a href="https://vk.com/s1kebeats" class="socials__link socials__link_vk" target="_blank" title="VK Group">
+                            <img class="socials__image" src="{% static 'images/vk.png' %}">
+                        </a>
+                    </li>
+                    <li class="socials__item">
+                        <a href="https://www.youtube.com/channel/UC7dV_5X2kbLohHHUu5Ckdmw" class="socials__link socials__link_youtube" target="_blank" title="Youtube Channel">
+                            <img class="socials__image" src="{% static 'images/youtube.png' %}">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__row">
+            <div class="footer__col footer__col_left">
+                <p class="credits">{% trans "Icons" %}: <a class="credits__link" href="https://www.freepik.com" title="Freepik">Freepik, IYAHICON, Webalys, Roundicons Premium</a> {% trans  "from" %} <a
+                    href="https://www.flaticon.com/ru/" class="credits__link" title="Flaticon">www.flaticon.com</a>
+                </p>
+            </div>
+            <div class="footer__col footer__col_right">
+                <p class="copyright">2021s1kebeats</p> 
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

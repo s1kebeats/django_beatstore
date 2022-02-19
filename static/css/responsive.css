@@ -1,0 +1,198 @@
+@media screen and (max-width: 450px) {
+  .audiojs .time {
+    width: 0;
+  }
+  .audiojs .scrubber {
+    width: 100px;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  html {
+    font-size: 10px;
+  }
+  footer {
+    padding-inline: 25px;
+  }
+  h1 {
+    margin-block: 25px;
+  }
+  .logo__icon {
+    margin-right: 10px;
+  }
+  .navigation_footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .search-beats {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 17.5px;
+  }
+  .search {
+    border-inline: none;
+  }
+  .beats {
+    border: none;
+    padding-right: 0;
+  }
+  .beat-wrapper {
+    width: 90%;
+    height: 100px;
+    margin-left: 0;
+  }
+  .wrap {
+    width: 100px;
+    height: 100px;
+  }
+  .beat__col_right {
+    padding: 10px;
+    width: calc(100% - 100px);
+  }
+  .beat__char {
+    margin-bottom: 1px;
+    font-size: 1.5rem;
+  }
+  .beat__player {
+    border-radius: 7.5px;
+    height: 20px;
+  }
+  .audiojs .scrubber {
+    height: 10px;
+  }
+  .audiojs .play {
+    background-size: 11px 11px;
+  }
+  .audiojs .loading {
+    background-size: 11px 11px;
+  }
+  .audiojs .pause {
+    background-size: 11px 11px;
+  }
+  .download {
+    background-size: 12px 12px;
+    background-position: 9px 9px;
+  }
+  .viewallbeats {
+    margin-top: 5px;
+    margin-bottom: 50px;
+  }
+  .artist-select {
+    padding: 10px 10px 0 0;
+  }
+  .artist-select_item {
+    margin: 0 0 10px 10px;
+    height: 25px;
+    border-radius: 7.5px;
+  }
+  .artist-select_label {
+    top: -29px;
+    border-radius: 7.5px;
+  }
+  .checkbox {
+    height: 25px;
+  }
+  .form__col_input {
+    height: 25px;
+    border-radius: 7.5px;
+  }
+  .form__row {
+    margin-bottom: 10px;
+  }
+  .search__button {
+    border-radius: 7.5px;
+    height: 27.5px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  iframe {
+    height: 20vh;
+  }
+  header {
+    padding-inline: 15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .beats-wrapper {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .navigation_header {
+    display: none;
+  }
+  .logo__icon {
+    margin-right: 10px;
+  }
+  .navigation_footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .search-beats {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 17.5px;
+  }
+  .search {
+    border-inline: none;
+  }
+  .beats {
+    border: none;
+    padding-right: 0;
+  }
+  .form__col_bpm {
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .best-beats {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .beat-wrapper_best {
+    margin-bottom: 17.5px;
+  }
+  .beat-wrapper_best:nth-child(2) {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  .vertical {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1860px) {
+  .vertical {
+    max-width: 1054.5px;
+  }
+  .beats {
+    min-width: 100px;
+  }
+}

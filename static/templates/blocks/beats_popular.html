@@ -1,0 +1,38 @@
+{% load static i18n %}  
+<section class="best-beats-section">
+    <h1 class="section__title">{% trans "Most popular" %}</h1>
+    <div class="best-beats">
+        {% if beat_list %}
+        {% for beat in beat_list %}
+        <div class="beat-wrapper beat-wrapper_best">
+            <div class="beat__col beat__col_left">
+                <img alt="wrap-image" class="wrap" src="{{ beat.wrap.url }}" width="160px" height="160px">
+            </div>
+            <div class="beat__col beat__col_right">
+                <div class="beat__char">
+                    <div class="beat__char_title">{% trans "Name" %}</div>
+                    <div class="beat__char_value">{{beat.name}}</div>
+                </div>
+                <div class="beat__char">
+                    <div class="beat__char_title">{% trans "Artist" %}</div>
+                    <div class="beat__char_value">{{beat.display_artist}}</div>
+                </div>
+                <div class="beat__char">
+                    <div class="beat__char_title">Bpm</div>
+                    <div class="beat__char_value">{{beat.bpm}}</div>
+                </div>
+                <div class="beat__player">
+                        <audio src="{{ beat.mp3.url }}"></audio>
+                        <a href="{{ beat.wave.url }}" class="download"  download="" title="{% trans "download .wave" %}">&nbsp</a>
+                </div>
+                </div>
+            </div>
+        {% endfor %}
+        {% else %}
+        <p>{% trans "There is no beats." %}</p>
+        {% endif %} 
+    </div>
+    <div class="viewallbeats">
+        <a class="viewallbeats__link" href="{% url 'beats' %}">{% trans "View all beats" %}</a>
+    </div>
+</section>

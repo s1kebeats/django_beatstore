@@ -1,59 +1,19 @@
-{% extends "base.html" %}
+{% extends "blocks/base.html" %}
 {% load static i18n %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'css/terms.css' %}">   
-<link rel="stylesheet" href="{% static 'css/beats_best.css' %}">
+<link rel="stylesheet" href="{% static 'css/terms.css' %}">
 {% endblock %}
-
 
 {% block title %}<title>{% trans "Terms of use" %}</title>{% endblock %}
 
 {% block content %}
-<p class="title">Terms of use</p>
+<h1>Terms of use</h1>
 <section class="terms">
-    <p>
+    <p class="terms__text">
         {% trans "All beats are free to use, but you must write me into the name of your song:" %}
     </p>
-    <img alt="use 'prod. by s1kebeats' in the name of your song" src="{% static 'images/credit.png' %}">
+    <img class="terms__image" alt="use 'prod. by s1kebeats' in the name of your song" src="{% static 'images/credit.png' %}">
 </section>
-<p class="title">{% trans "Most popular" %}</p>
-<div class="beats">
-    <div class="beats-wrapper">
-    {% if beat_list %}
-        {% for beat in beat_list %}
-            <div class="beat-wrapper">
-                <div class="beat-left">
-                    <img alt="wrap-image" class="wrap" src="{{ beat.wrap.url }}" width="160px" height="160px">
-                </div>
-                <div class="beat-right">
-                    <div class="beat-char">
-                        <div class="char-title">{% trans "Name" %}</div>
-                        <div class="char-value"><div>{{beat.name}}</div></div>
-                    </div>
-                    <div class="beat-char">
-                        <div class="char-title">{% trans "Artist" %}</div>
-                        <div class="char-value"><div>{{beat.display_artist}}</div></div>
-                    </div>
-                    <div class="beat-char">
-                        <div class="char-title">Bpm</div>
-                        <div class="char-value"><div>{{beat.bpm}}</div></div>
-                    </div>
-                    <div class="player">
-                        <div class="player-wrapper">
-                            <audio src="{{ beat.mp3.url }}" preload="metadata"></audio>
-                            <a href="{{ beat.wave.url }}" class="download"  download="" title="{% trans "download .wave" %}">&nbsp</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-            {% else %}
-            <p>{% trans "There is no beats." %}</p>
-            {% endif %} 
-    </div>
-    <div class="viewallbeats">
-        <a href="{% url 'beats' %}">{% trans "View all beats" %}</a>
-    </div>
-</div>
+{% include 'blocks/beats_popular.html' %}
 {% endblock %}

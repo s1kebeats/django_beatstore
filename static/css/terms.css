@@ -1,5 +1,4 @@
 .terms {
-    margin-bottom: 5%;
     text-align: center;
     width: 80%;
     max-width: 900px;
@@ -12,43 +11,43 @@
     border: 1px solid #e5e8eb;
     background-color: white;
 }
-.terms p {
+.terms__text {
     text-align: left;
     font-size: 1.8rem;
     width: 50%;
 }
-.terms img {
+.terms__image {
     margin-top: 5%;
     width: 300px;
     height: 80px;
 }
 
 @media screen and (max-width: 449px) {
-    .terms p {
+    .terms__text {
         text-align: left;
         font-size: 1.8rem;
         width: 90%;
     }
-    .terms img {
+    .terms__image {
         margin-top: 5%;
         width: auto;
         height: 8vh;
     }
 }
 @media screen and (min-width: 450px) and (max-width: 649px) {
-    .terms p {
+    .terms__text {
         text-align: left;
         font-size: 1.8rem;
         width: 90%;
     }
-    .terms img {
+    .terms__image {
         margin-top: 5%;
         width: auto;
         height: 10vh;
     }
 }
 @media screen and (min-width: 650px) and (max-width: 1100px) {
-    .terms p {
+    .terms__text {
         text-align: left;
         font-size: 1.8rem;
         width: 90%;

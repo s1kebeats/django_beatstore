@@ -1,0 +1,16 @@
+{% load static i18n %}
+<div class="pagination">
+        {% if page_obj.has_previous %}
+        <div class="pagination__button">
+            <a class="pagination__link" href="?page={{ page_obj.previous_page_number }}"><</a>
+        </div>
+        {% endif %}
+        <div class="pagination__current">
+            {% trans "Page" %} {{ page_obj.number }} {% trans "of" %} {{ page_obj.paginator.num_pages }}
+        </div>
+        {% if page_obj.has_next %}
+        <div class="pagination__button">
+            <a class="pagination__link" href="?page={{ page_obj.next_page_number }}">></a>
+        </div>
+        {% endif %}
+</div>
