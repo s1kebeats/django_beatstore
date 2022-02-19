@@ -1,3 +1,7 @@
+body {
+  background-image: none;
+}
+
 .pagination {
   height: 20px;
   display: -webkit-box;
