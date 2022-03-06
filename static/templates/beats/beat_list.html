@@ -24,7 +24,7 @@
                 </div>
                 <div class="form__row">
                     <div class="form__col">
-                        <p class="form__col_title">{% trans "Artist" %}</p>
+                        <p class="form__col_title">{% trans "Type" %}</p>
                         <ul class="artist-select">
                             {% for artist in view.get_artists%}
                             <li class="artist-select_item">
@@ -54,7 +54,7 @@
                             <div class="beat__char_value">{{beat.name}}</div>
                         </div>
                         <div class="beat__char">
-                            <div class="beat__char_title">{% trans "Artist" %}</div>
+                            <div class="beat__char_title">{% trans "Type" %}</div>
                             <div class="beat__char_value">{{beat.display_artist}}</div>
                         </div>
                         <div class="beat__char">
