@@ -1,11 +1,6 @@
 {% extends "blocks/base.html" %}
 {% load static i18n %}
 
-{% block css %}
-<link rel="stylesheet" href="{% static 'css/search_0.1.css' %}">
-<link rel="stylesheet" href="{% static 'css/pagination_0.1.css' %}">
-{% endblock %}
-
 {% block content %}
 <section class="search-section">
     <h1 class="section__title">{% trans "Search" %}</h1>
@@ -62,11 +57,22 @@
                             <div class="beat__char_value">{{beat.bpm}}</div>
                         </div>
                         <div class="beat__player">
-                                <audio src="{{ beat.mp3.url }}"></audio>
-                                <a href="{{ beat.wave.url }}" class="download"  download="" title="{% trans "download .wave" %}">&nbsp</a>
-                        </div>
+                            <audio class="audio" src="{{ beat.mp3.url }}" preload="metadata"></audio>
+                            <div class="controls">
+                              <button id="paused" class="play-pause"></button>
+                              <input type="range" class="timeline__input" value="0">
+                              <div class="time">
+                                <span class="time__current">0:00</span>
+                                <span class="time__separator">/</span>
+                                <span class="time__full"></span>
+                              </div>
+                              <div class="download">
+                                <a href="{{ beat.wave.url }}" download="" class="download__link">&nbsp;</a>
+                              </div>
+                            </div>
                         </div>
                     </div>
+                </div>
                 {% endfor %}
                 {% else %}
                 <p class="search__notfound">{% trans "No mathes found." %}</p>
