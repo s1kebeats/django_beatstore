@@ -1,4 +1,4 @@
-{% extends "blocks/base.html" %}
+{% extends "blocks/base_major.html" %}
 {% load static i18n %}
 
 {% block title %}<title>{% trans "Terms of use" %}</title>{% endblock %}
@@ -13,5 +13,5 @@
         <img class="terms__image" alt="{% trans "use 'prod. by s1kebeats' in the name of your song" %}" src="{% static 'images/credit.png' %}">
     </div>
 </section>
-{% include 'blocks/beats_popular.html' %}
+{% include 'blocks/beats_popular_major.html' %}
 {% endblock %}

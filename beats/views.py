@@ -32,12 +32,12 @@ class BeatsListView(ArtistSearch, ListView):
 def index(request):
     beat_list = beats_list.reverse()[:2]
 
-    return render(request, 'index.html', context={'beat_list':beat_list,})
+    return render(request, 'index_major.html', context={'beat_list':beat_list,})
 
 def terms(request):
     beat_list = beats_list.reverse()[:2]
 
-    return render(request, 'terms.html', context={'beat_list':beat_list,})
+    return render(request, 'terms_major.html', context={'beat_list':beat_list,})
 
 
 
