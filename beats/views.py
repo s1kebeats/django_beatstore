@@ -1,4 +1,3 @@
-from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.shortcuts import render
 from .models import Beat, Artist
 from django.views.generic import ListView
@@ -30,12 +29,12 @@ class BeatsListView(ArtistSearch, ListView):
         return context
 
 def index(request):
-    beat_list = beats_list.reverse()[:2]
+    beat_list = beats_list.reverse()[:4]
 
     return render(request, 'index_major.html', context={'beat_list':beat_list,})
 
 def terms(request):
-    beat_list = beats_list.reverse()[:2]
+    beat_list = beats_list.reverse()[:4]
 
     return render(request, 'terms_major.html', context={'beat_list':beat_list,})
 
