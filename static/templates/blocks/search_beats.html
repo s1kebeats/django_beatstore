@@ -1,0 +1,81 @@
+{% load static i18n %}
+<section class="search-section">
+    <h1 class="section__title">Search</h1>
+    <div class="search-beats">
+        <div class="search">
+            <form action="{% url 'beats' %}" method="get" class="form">
+                <div class="form__row">
+                    <div class="form__col form__col_bpm">
+                        <p class="form__col_title">Bpm</p>
+                        <input class="form__col_input" type="number" size="3" name="bpm" min="87" max="160" placeholder="s1ke">
+                    </div>
+                    <div class="form__col form__col_name">
+                        <p class="form__col_title">{% trans "Name" %}</p>
+                        <input class="form__col_input" type="text" placeholder="beats" name="nm">
+                    </div>
+                </div>
+                <div class="form__row">
+                    <div class="form__col">
+                        <p class="form__col_title">{% trans "Type" %}</p>
+                        <ul class="artist-select">
+                            {% for artist in view.get_artists %}
+                            <li class="artist-select__item">
+                                <label class="artist-select__label" id="unchecked" for="artist">
+                                    <input type="checkbox" class="checkbox" name='artist' value="{{ artist.id }}">
+                                    {{ artist.name }}
+                                </label>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="form__button"><button class="search__button" type="submit">{% trans "Search" %}</button></div>
+            </form>
+        </div>
+        <div class="beats">
+            <div class="beats-wrapper">
+                <div class="vertical">
+                    {% if beat_list %}
+                        {% for beat in beat_list %}
+                            <div class="beat-wrapper">
+                                <div class="beat__col beat__col_left">
+                                    <img alt="wrap-image" class="wrap" src="{{ beat.wrap.url }}" width="160px" height="160px">
+                                </div>
+                                <div class="beat__col beat__col_right">
+                                    <div class="beat__char">
+                                        <div class="beat__char_title">{% trans "Name" %}</div>
+                                        <div class="beat__char_value">{{beat.name}}</div>
+                                    </div>
+                                    <div class="beat__char">
+                                        <div class="beat__char_title">{% trans "Type" %}</div>
+                                        <div class="beat__char_value">{{beat.display_artist}}</div>
+                                    </div>
+                                    <div class="beat__char">
+                                        <div class="beat__char_title">Bpm</div>
+                                        <div class="beat__char_value">{{beat.bpm}}</div>
+                                    </div>
+                                    <div class="beat__player">
+                                    <audio class="audio" src="{{ beat.mp3.url }}" preload="metadata"></audio>
+                                    <div class="controls">
+                                        <button id="paused" class="play-pause"></button>
+                                        <input type="range" class="timeline__input" value="0">
+                                        <div class="time">
+                                        <span class="time__current">0:00</span>
+                                        <span class="time__separator">/</span>
+                                        <span class="time__full"></span>
+                                        </div>
+                                        <div class="download">
+                                        <a href="{{ beat.wave.url }}" download="" class="download__link">&nbsp;</a>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>{% trans "There is no beats." %}</p>
+                    {% endif %} 
+        </div>  
+    </div>
+    {% include 'blocks/pagination.html' %}
+</section>

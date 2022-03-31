@@ -1,0 +1,17 @@
+{% load static i18n %}  
+<div class="overlay">
+    <nav class="navigation_overlay">
+        <a title="Main page" href="{% url 'index' %}" class="navigation_overlay__link">{% trans "Home" %}</a>
+        <a title="Beats page" href="{% url 'beats' %}" class="navigation_overlay__link">{% trans "Beats" %}</a>
+        <a title="Usage page" href="{% url 'terms' %}" class="navigation_overlay__link">{% trans "Usage" %}</a>
+    </nav>
+    <div class="language-switcher">
+        <form class="language-form" action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+            <div class="language-form__buttons">
+                <button title="Russian Language" type="submit" value="ru" class="language-form__button language-form__button_ru " name="language">&nbsp;</button>
+                <button title="English Language" type="submit" value="en" class="language-form__button language-form__button_eng" name="language">&nbsp;</button>
+            </div>
+        </form>
+    </div>
+</div>
