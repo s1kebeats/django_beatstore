@@ -5,6 +5,15 @@
     <meta name="description" content="S1ke Beats official website. You can download, listen and see all my music here." />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RELXFM2RMR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'G-RELXFM2RMR');
+    </script>
     {% block title %}<title>S1ke Beatstore</title>{% endblock %}
     {% load static i18n %}
     <link href="{% static 'images/S_backed.svg' %}" rel="shortcut icon" type="image/png">
