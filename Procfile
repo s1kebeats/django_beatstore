@@ -1,1 +1,1 @@
-web: gunicorn beatstore.wsgi
+web: gunicorn beatstore.wsgi --timeout 150
