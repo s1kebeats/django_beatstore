@@ -1,11 +1,17 @@
 {% extends "blocks/base_major.html" %}
 {% load static i18n %}
 
+{% block content %}
+
+{% include 'blocks/youtube_latest_major.html' %}
+{% include 'blocks/beats_popular_major.html' %}
+
+{% endblock %}
 
 {% block additional_script %}
-<script defer>
-    const iframe = document.querySelector('.youtube_video');
+<script>
     const url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UU7dV_5X2kbLohHHUu5Ckdmw&maxResults=1&key={{ youtube_api_key }}'
+    const iframe = document.querySelector('.youtube_video');
 
     fetch(url)
         .then(response => response.json())
@@ -17,12 +23,4 @@
             console.log(error)
         );
 </script>
-{% endblock %}
-
-
-{% block content %}
-
-{% include 'blocks/youtube_latest_major.html' %}
-{% include 'blocks/beats_popular_major.html' %}
-
 {% endblock %}
