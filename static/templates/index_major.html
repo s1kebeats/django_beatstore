@@ -1,6 +1,25 @@
 {% extends "blocks/base_major.html" %}
 {% load static i18n %}
 
+
+{% block additional_script %}
+<script defer>
+    const iframe = document.querySelector('.youtube_video');
+    const url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UU7dV_5X2kbLohHHUu5Ckdmw&maxResults=1&key={{ youtube_api_key }}'
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            id = data.items[0].snippet.resourceId.videoId;
+            iframe.setAttribute('src', `https://www.youtube.com/embed/${id}`);
+        })
+        .catch(
+            console.log(error)
+        );
+</script>
+{% endblock %}
+
+
 {% block content %}
 
 {% include 'blocks/youtube_latest_major.html' %}

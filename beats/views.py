@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from beatstore.settings import YOUTUBE_API_KEY
 from .models import Beat, Artist
 from django.views.generic import ListView
+
 
 beats_list = Beat.objects.all()
 
@@ -31,7 +33,7 @@ class BeatsListView(ArtistSearch, ListView):
 def index(request):
     beat_list = beats_list.reverse()[:2]
 
-    return render(request, 'index_major.html', context={'beat_list':beat_list,})
+    return render(request, 'index_major.html', context={'beat_list':beat_list, 'youtube_api_key' : YOUTUBE_API_KEY})
 
 def terms(request):
     beat_list = beats_list.reverse()[:2]

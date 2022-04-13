@@ -144,6 +144,10 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#YOUTUBE API
+
+YOUTUBE_API_KEY = os.environ.get('YOUTUBE_API_KEY')
+
 #S3 BUCKETS CONFIG
 
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
