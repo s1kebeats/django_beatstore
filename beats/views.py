@@ -31,12 +31,12 @@ class BeatsListView(ArtistSearch, ListView):
         return context
 
 def index(request):
-    beat_list = beats_list.reverse()[:2]
+    beat_list = beats_list[:2]
 
     return render(request, 'index_major.html', context={'beat_list':beat_list, 'youtube_api_key' : YOUTUBE_API_KEY})
 
 def terms(request):
-    beat_list = beats_list.reverse()[:2]
+    beat_list = beats_list[:2]
 
     return render(request, 'terms_major.html', context={'beat_list':beat_list,})
 
