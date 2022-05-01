@@ -1,6 +1,6 @@
 {% load static i18n %}
 <section class="search-section">
-    <h1 class="section__title">Search</h1>
+    <h1 class="section__title">{% trans "Search" %}</h1>
     <div class="search-beats">
         <div class="search">
             <form action="{% url 'beats' %}" method="get" class="form">
@@ -73,7 +73,7 @@
                             </div>
                         {% endfor %}
                     {% else %}
-                        <p>{% trans "There is no beats." %}</p>
+                        <h1>{% trans "There is no beats." %}</h1>
                     {% endif %} 
         </div>  
     </div>
